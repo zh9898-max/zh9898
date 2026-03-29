@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title> ZH 9898 </title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #00ffcc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #00ffcc33;
+      width: 400px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      background: black;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #00ffcc;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #resultado {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+    #secreto {
+      margin-top: 20px;
+      display: none;
+      padding: 15px;
+      border: 1px solid #00ffcc;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Acertijo Secreto</h2>
+    <p>Introduce el mensaje cifrado:</p>
+    <textarea id="mensaje"></textarea>
+    <button onclick="descifrar()">Descifrar</button>
+    <div id="resultado"></div>
+
+    <!-- Mensaje secreto oculto -->
+    <div id="secreto">
+      <h3>🧩 Mensaje Descubierto</h3>
+      <p id="mensajeSecreto">zh 9898</p>
+    </div>
+  </div>
+
+  <script>
+    const textoCorrecto = "XCKEY01CARD74";
+
+    // 👇 CAMBIA ESTE TEXTO POR TU MENSAJE SECRETO
+    const mensajeOculto = "CICADA 3301 DE POR SI ES MUY DIFICL,TIENES QUE SER MUY INTELIGENTE,ESTO ES UN TEST PARA UN CICADA 3301 A MI ESTILO...";
+
+    function descifrar() {
+      const input = document.getElementById("mensaje").value.trim();
+      const resultado = document.getElementById("resultado");
+      const secreto = document.getElementById("secreto");
+      const mensajeSecreto = document.getElementById("mensajeSecreto");
+
+      if (input === textoCorrecto) {
+        resultado.innerHTML = "✅ Correcto. Has resuelto el acertijo.";
+        secreto.style.display = "block";
+        mensajeSecreto.innerText = mensajeOculto;
+      } else {
+        resultado.innerHTML = "❌ Incorrecto. Sigue intentando.";
+        secreto.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
